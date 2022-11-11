@@ -6,7 +6,7 @@ register(
   'menu-component',
   ['backgroundcolor', 'xdisplacement', 'ydisplacement'],
   {
-    shadow: false,
+    shadow: true,
   }
 );
 
