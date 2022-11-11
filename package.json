@@ -6,14 +6,6 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/my-component.umd.cjs",
-  "module": "./dist/my-component.js",
-  "exports": {
-    ".": {
-      "import": "./dist/my-component.js",
-      "require": "./dist/my-component.umd.cjs"
-    }
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
