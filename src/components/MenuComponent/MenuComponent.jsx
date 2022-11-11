@@ -23,12 +23,12 @@ let buttonWrapper = (props) => {
 
 let divWrapper = css`
   width: 100px;
-  height: 100px;
   background-color: red;
   position: absolute;
   top: 0;
   left: 0;
   transform: scale(0);
+  opacity: 0;
   transform-origin: top left;
   z-index: 2;
 `;
@@ -39,12 +39,22 @@ export const MenuComponent = (props) => {
   const openMenu = () => {
     gsap.to(divRef.current, {
       scale: 1,
+      opacity: 1,
+      duration: 0.6,
     });
   };
 
   return (
     <div className={mainWrapper(props)}>
-      <div ref={divRef} className={divWrapper} />
+      <div ref={divRef} className={divWrapper}>
+        <ul>
+          <li>Test1</li>
+          <li>Test2</li>
+          <li>Test3</li>
+          <li>Test4</li>
+          <li>Test5</li>
+        </ul>
+      </div>
       <button onClick={openMenu} className={buttonWrapper(props)}>
         MENU
       </button>
