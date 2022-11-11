@@ -47,7 +47,7 @@ export const MenuComponent = (props) => {
   return (
     <div className={mainWrapper(props)}>
       <div ref={divRef} className={divWrapper}>
-        <ul>
+        <ul style={{ listStylePosition: 'inside' }}>
           <li>Test1</li>
           <li>Test2</li>
           <li>Test3</li>
