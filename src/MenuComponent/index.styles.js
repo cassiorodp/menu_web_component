@@ -47,22 +47,6 @@ export const resumeWrapper = css`
   font-size: 2.4rem;
 `;
 
-// export const Resume = styled.p`
-//   font-size: ${(props) => props.fontSize || '2rem'};
-
-//   text-transform: ${(props) => (props.upper ? 'uppercase' : 'none')};
-// `;
-
-// export const EmailFooter = styled.div`
-//   align-items: center;
-//   display: flex;
-//   font-size: 1.2rem;
-//   text-transform: uppercase;
-//   justify-content: space-between;
-//   padding-bottom: 1rem;
-//   border-bottom: 1px dashed #000;
-// `;
-
 export const emailFooter = css`
   align-items: center;
   display: flex;
