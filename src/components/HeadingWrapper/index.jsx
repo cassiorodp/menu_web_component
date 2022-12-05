@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import { useEffect, useRef } from 'preact/hooks';
 import { MdOutlineArrowBackIos } from 'react-icons/md';
-import { LearnWrapper, Resume, Summary } from './index.styles';
+import { learnWrapper, resumeWrapper, summaryWrapper } from './index.styles';
 
 function HeadingWrapper(props) {
   const ref = useRef(null);
@@ -19,7 +19,7 @@ function HeadingWrapper(props) {
 
   return (
     <div ref={ref}>
-      <Summary>
+      <div className={summaryWrapper}>
         <ul>
           <li>Home</li>
           <li>About</li>
@@ -27,13 +27,13 @@ function HeadingWrapper(props) {
           <li>Work</li>
           <li>News</li>
         </ul>
-      </Summary>
-      <Resume>
+      </div>
+      <p className={resumeWrapper}>
         Harmony Labs is a media research studio that combines the power of data,
         science, and creativity to research and reshape our relationship with
         media.
-      </Resume>
-      <LearnWrapper>
+      </p>
+      <div className={learnWrapper}>
         Learn More
         <MdOutlineArrowBackIos
           style={{
@@ -41,7 +41,7 @@ function HeadingWrapper(props) {
           }}
           size={20}
         />
-      </LearnWrapper>
+      </div>
     </div>
   );
 }

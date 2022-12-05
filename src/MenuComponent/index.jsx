@@ -1,17 +1,17 @@
 import gsap, { Power2 } from 'gsap';
 import { useEffect, useRef, useState } from 'preact/hooks';
-import GlobalStyle from './GlobalStyles';
 import {
-  ArrowButton,
-  EmailFooter,
-  FooterWrapper,
-  HarmonyLogo,
-  Heading,
-  Resume,
-  Wrapper,
+  arrowButtonWrapper,
+  emailFooter,
+  harmonyLogoWrapper,
+  headingWrapper,
+  mainWrapper,
+  resumeWrapper,
+  upperResume,
 } from './index.styles';
 import { MdOutlineArrowBackIos } from 'react-icons/md';
 import HeadingWrapper from '../components/HeadingWrapper';
+import { glob } from 'goober';
 
 export const MenuComponent = (props) => {
   const wrapperRef = useRef(null);
@@ -45,26 +45,37 @@ export const MenuComponent = (props) => {
     timeline.current.reversed(!timeline.current.reversed());
   };
 
+  glob`
+  html {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+  }
+`;
+
   return (
     <>
-      <GlobalStyle />
-      <Wrapper ref={wrapperRef}>
+      <div className={mainWrapper} ref={wrapperRef}>
         <div>
-          <Heading>
+          <div className={headingWrapper}>
             <div>
-              <HarmonyLogo />
+              <div className={harmonyLogoWrapper} />
               <h1>Harmony Labs</h1>
             </div>
-            <ArrowButton onClick={openMenu} ref={arrowRef}>
+            <button
+              className={arrowButtonWrapper}
+              onClick={openMenu}
+              ref={arrowRef}
+            >
               <MdOutlineArrowBackIos size={20} />
-            </ArrowButton>
-          </Heading>
+            </button>
+          </div>
           <HeadingWrapper menuOpened={menuOpened} />
         </div>
-        <FooterWrapper>
-          <Resume upper>NewsLetter</Resume>
-          <Resume fontSize="2.4rem">Subscribe for regular updates</Resume>
-          <EmailFooter>
+        <div>
+          <p className={upperResume}>NewsLetter</p>
+          <p className={resumeWrapper}>Subscribe for regular updates</p>
+          <div className={emailFooter}>
             Email Address
             <MdOutlineArrowBackIos
               style={{
@@ -72,9 +83,9 @@ export const MenuComponent = (props) => {
               }}
               size={20}
             />
-          </EmailFooter>
-        </FooterWrapper>
-      </Wrapper>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

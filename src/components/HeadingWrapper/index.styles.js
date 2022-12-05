@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import { css } from 'goober';
 
-export const Summary = styled.div`
+export const summaryWrapper = css`
   ul {
     padding: 0;
     padding-bottom: 1.2rem;
@@ -12,13 +12,11 @@ export const Summary = styled.div`
   }
 `;
 
-export const Resume = styled.p`
-  font-size: ${(props) => props.fontSize || '2rem'};
-
-  text-transform: ${(props) => (props.upper ? 'uppercase' : 'none')};
+export const resumeWrapper = css`
+  font-size: 2rem;
 `;
 
-export const LearnWrapper = styled.div`
+export const learnWrapper = css`
   display: flex;
   align-items: center;
 
