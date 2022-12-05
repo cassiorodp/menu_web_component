@@ -1,5 +1,5 @@
 import register from 'preact-custom-element';
-import { MenuComponent } from './components/MenuComponent/MenuComponent';
+import { MenuComponent } from './MenuComponent';
 
 register(
   MenuComponent,
